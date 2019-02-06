@@ -6,7 +6,7 @@ describe Bike do
   end
 
   it 'should return yes for working?' do
-    expect(bike.working?).to eq 'yes'
+    expect(bike.working?).to eq true
   end
 
 end

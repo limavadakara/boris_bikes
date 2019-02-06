@@ -1,7 +1,7 @@
 class Bike
 
   def working?
-    return 'yes'
+    return true
   end
 
 end
