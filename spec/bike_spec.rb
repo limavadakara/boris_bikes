@@ -1,11 +1,16 @@
 require 'bike'
 describe Bike do
-  it 'should respond to method working' do
-    expect(subject).to respond_to(:working?)
+  it 'should respond to method is_working' do
+    expect(subject).to respond_to(:is_working)
   end
 
-  it 'should return yes for working?' do
-    expect(subject.working?).to eq true
+  it 'should be working when bike is created' do
+    expect(subject.is_working).to eq true
+  end
+
+  it 'should set bike as broken' do
+    subject.is_working = false
+    expect(subject.is_working).to eq false
   end
 
 end
