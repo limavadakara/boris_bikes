@@ -38,4 +38,12 @@ describe DockingStation do
     expect {subject.dock(Bike.new)}.to raise_error
   end
 
+  it 'creates a docking station with a specified capacity' do
+    dockingstation = DockingStation.new(10)
+    10.times do
+      dockingstation.dock(Bike.new)
+    end
+    expect {dockingstation.dock(Bike.new)}.to raise_error
+  end
+
 end
