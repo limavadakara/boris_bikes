@@ -14,13 +14,18 @@ class DockingStation
     working_bikes.empty?
   end
 
+  def get_working_bike
+    bike_index = @bikes.find_index { |bike| bike.is_working == true }
+    @bikes.delete_at(bike_index)
+  end
+
   def full?
     @bikes.length == @capacity
   end
 
   def release_bike
     raise "No bikes to release" if empty?
-    @bikes.pop
+    get_working_bike
   end
 
   def dock(bike)
