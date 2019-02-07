@@ -18,4 +18,10 @@ describe DockingStation do
     bike = Bike.new
     expect {subject.dock(bike)}.not_to raise_error
   end
+
+  it 'displays all the bikes it has docked' do
+    bike = Bike.new
+    subject.dock(bike)
+    expect(subject.bikes).to eq [bike]
+  end
 end
