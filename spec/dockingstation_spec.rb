@@ -55,4 +55,12 @@ describe DockingStation do
     expect {dockingstation.dock(Bike.new)}.to raise_error
   end
 
+  it 'will not release a bike if there are no working bikes' do
+    bike = Bike.new
+    bike.is_working = false
+    subject.dock(bike)
+
+    expect {subject.release_bike}.to raise_error
+  end
+
 end

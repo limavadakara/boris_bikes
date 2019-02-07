@@ -10,7 +10,8 @@ class DockingStation
   end
 
   def empty?
-    @bikes.empty?
+    working_bikes = @bikes.select { |bike| bike.is_working == true }
+    working_bikes.empty?
   end
 
   def full?
