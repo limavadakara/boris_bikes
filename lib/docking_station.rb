@@ -26,4 +26,6 @@ class DockingStation
     @bikes << bike
   end
 
+  private :empty?, :full?
+
 end
