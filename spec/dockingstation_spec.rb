@@ -33,7 +33,7 @@ describe DockingStation do
 
   it 'raises an error when docking a bike onto it if it is full' do
     20.times do
-    subject.dock(Bike.new)
+      subject.dock(Bike.new)
     end
     expect {subject.dock(Bike.new)}.to raise_error
   end
