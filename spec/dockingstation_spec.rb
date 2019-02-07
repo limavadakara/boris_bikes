@@ -13,4 +13,9 @@ describe DockingStation do
     bike = subject.release_bike
     expect(bike.working?).to eq true
   end
+
+  it 'docks a bike' do
+    bike = Bike.new
+    expect {subject.dock(bike)}.not_to raise_error
+  end
 end
